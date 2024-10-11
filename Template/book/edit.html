@@ -1,55 +1,128 @@
 {% include "components/header.html" %}
 {% include "components/sidebar.html" %}
 
-<div class="container-fluid mt-3">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title text-center">Edit Book Details</h2>
-          <form action="" method="post">
-            {% csrf_token %}
-            
-            <!-- Book Name and Author -->
-            <div class="row mb-3">
-              <div class="col">
-                <label for="b_name" class="form-label">Book Name</label>
-                <input type="text" class="form-control" id="b_name" name="b_name" value="{{ bookData.b_name }}" required>
-              </div>
-              <div class="col">
-                <label for="b_author" class="form-label">Author</label>
-                <input type="text" class="form-control" id="b_author" name="b_author" value="{{ bookData.b_author }}" required>
-              </div>
-            </div>
+<!-- Styling -->
+<style>
+  body {
+    background: linear-gradient(to right, #f8cdda, #1d2b64); /* Soft pink to lavender gradient */
+    font-family: 'Poppins', sans-serif; /* Modern, aesthetic font */
+  }
 
-            <!-- Book Price and Category -->
-            <div class="row mb-3">
-              <div class="col">
-                <label for="b_prize" class="form-label">Price</label>
-                <input type="text" class="form-control" id="b_prize" name="b_prize" value="{{ bookData.b_prize }}" required>
-              </div>
-              <div class="col">
-                <label for="b_category" class="form-label">Category</label>
-                <input type="text" class="form-control" id="b_category" name="b_category" value="{{ bookData.b_category }}" required>
-              </div>
-            </div>
+  .form-container {
+    margin-top: 50px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    border-radius: 20px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1); /* Softer shadow for elegance */
+    max-width: 800px;
+    width: 100%;
+    animation: fadeInUp 0.8s ease-out; /* Subtle animation on load */
+  }
 
-            <!-- Remember Me Checkbox -->
-            <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="remember" name="remember">
-              <label class="form-check-label" for="remember">
-                Remember me
-              </label>
-            </div>
+  h2 {
+    color: #444444;
+    font-size: 2.8rem; /* Larger heading */
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
 
-            <!-- Submit Button -->
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
+  label {
+    font-size: 1.2rem;
+    color: #333333;
+  }
+
+  input.form-control {
+    padding: 12px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease-in-out; /* Smooth transition */
+  }
+
+  input.form-control:focus {
+    border-color: #ff8a65; /* Aesthetic focus color */
+    outline: none;
+  }
+
+  .btn-custom {
+    background-color: #ff8a65; /* Warm pastel orange */
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+  }
+
+  .btn-custom:hover {
+    background-color: #e57373;
+    transform: translateY(-3px); /* Lift effect */
+  }
+
+  .form-check-label {
+    font-size: 1rem;
+    color: #444444;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+</style>
+
+<!-- HTML Structure -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="form-container">
+    <h2 class="text-center">Edit Book Details</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <!-- Book Name and Author -->
+      <div class="row mb-4">
+        <div class="col">
+          <label for="b_name" class="form-label">Book Name</label>
+          <input type="text" class="form-control" id="b_name" name="b_name" value="{{ bookData.b_name }}" required>
+        </div>
+        <div class="col">
+          <label for="b_author" class="form-label">Author</label>
+          <input type="text" class="form-control" id="b_author" name="b_author" value="{{ bookData.b_author }}" required>
         </div>
       </div>
-    </div>
+
+      <!-- Book Price and Category -->
+      <div class="row mb-4">
+        <div class="col">
+          <label for="b_prize" class="form-label">Price</label>
+          <input type="text" class="form-control" id="b_prize" name="b_prize" value="{{ bookData.b_prize }}" required>
+        </div>
+        <div class="col">
+          <label for="b_category" class="form-label">Category</label>
+          <input type="text" class="form-control" id="b_category" name="b_category" value="{{ bookData.b_category }}" required>
+        </div>
+      </div>
+
+      <!-- Remember Me Checkbox -->
+      <div class="form-check mb-4">
+        <input class="form-check-input" type="checkbox" id="remember" name="remember">
+        <label class="form-check-label" for="remember">
+          Remember me
+        </label>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-custom">Submit</button>
+      </div>
+    </form>
   </div>
 </div>
 
