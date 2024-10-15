@@ -29,6 +29,8 @@ urlpatterns = [
     path('b-edit/<id>',bookview.edit),
     path('b-add/',bookview.Addbook),
     path('b-delete/<id>',bookview.delete),
+    path('b-login/',bookview.loginForm),
+    path('b-create/',bookview.CreateAcc),
    
 
 ]
