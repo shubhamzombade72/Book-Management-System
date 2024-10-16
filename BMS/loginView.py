@@ -26,7 +26,7 @@ def AddReg(request):
         request.session["success"] = "Record added successfully!"
         return render(request,"logins/index.html")
     
-def login(request):
-     loginData= Registration.objects.get(id=id)
-     if request.method=="GET":
-         loginData=Registration
+# def login(request):
+#      loginData= Registration.objects.get(id=id)
+#      if request.method=="GET":
+#          loginData=Registration
