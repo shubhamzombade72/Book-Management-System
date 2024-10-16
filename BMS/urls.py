@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from book import views
 from BMS import bookview 
+from BMS import loginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +32,9 @@ urlpatterns = [
     path('b-delete/<id>',bookview.delete),
     path('b-login/',bookview.loginForm),
     path('b-create/',bookview.CreateAcc),
+
+
+    path('u-login/',loginView.Addlogin),
    
 
 ]
