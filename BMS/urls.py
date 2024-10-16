@@ -34,7 +34,7 @@ urlpatterns = [
     path('b-create/',bookview.CreateAcc),
 
 
-    path('u-login/',loginView.Addlogin),
+    path('u-login/',loginView.AddReg),
    
 
 ]

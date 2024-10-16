@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from loginForms.models import Registration
 
 
-def Addlogin(request):
+def AddReg(request):
     if request.method == "POST":
        
         name = request.POST.get("name")
@@ -24,4 +24,9 @@ def Addlogin(request):
 
         
         request.session["success"] = "Record added successfully!"
-        return render(request,"logins/index.html",saveData)
+        return render(request,"logins/index.html")
+    
+def login(request):
+     loginData= Registration.objects.get(id=id)
+     if request.method=="GET":
+         loginData=Registration
