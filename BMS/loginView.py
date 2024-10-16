@@ -24,4 +24,4 @@ def Addlogin(request):
 
         
         request.session["success"] = "Record added successfully!"
-        return redirect(login)
+        return render(request,"logins/index.html",saveData)
