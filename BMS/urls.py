@@ -35,6 +35,10 @@ urlpatterns = [
 
 
     path('u-login/',loginView.AddReg),
+
+    path('login/', loginView.LoginPage, name='login'),
+    path('logout/', loginView.LogoutPage, name='logout'),
+    path('home/', loginView.HomePage, name='home'),
    
 
 ]
