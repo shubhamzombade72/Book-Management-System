@@ -69,16 +69,3 @@ def Addbook(request):
         
         request.session["success"] = "Record added successfully!"
         return redirect(book)
-def loginForm(request):
-    subBook=Books.objects.all()
-    subBook={
-        "subBook":subBook
-    }
-    return render(request,"logins/loginForm.html",subBook)
-
-def CreateAcc(request):
-    subBook=Books.objects.all()
-    subBook={
-        "subBook":subBook
-    }
-    return render(request,"logins/createAcc.html",subBook)
